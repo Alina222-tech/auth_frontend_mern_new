@@ -1,0 +1,217 @@
+:root {
+  --primary-color: #ff6b6b;        
+  --primary-hover: #ff8787;        
+  --background-gradient: linear-gradient(145deg, #0f0f10, #1a1a1d);
+  --card-bg: rgba(35, 35, 38, 0.85); 
+  --input-bg: rgba(50, 50, 54, 0.85);
+  --text-color: #ffffff;
+  --shadow-color: rgba(255, 107, 107, 0.25);
+  --border-radius: 16px;
+  --transition-speed: 0.3s;
+  --font-main: "Poppins", sans-serif;
+  --hover-glow: rgba(255, 107, 107, 0.35);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-gradient);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+.mainsignup,
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.signup,
+.main {
+  backdrop-filter: blur(20px);
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  animation: fadeIn var(--transition-speed) ease-in-out;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.signup:hover,
+.main:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 70px var(--hover-glow);
+}
+
+
+.signup h1,
+.main h1 {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 6px var(--hover-glow);
+}
+
+.signup label,
+.main label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ccc;
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+
+.signup input,
+.main input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow 0.3s, transform 0.2s ease-in-out;
+}
+
+.signup input:focus,
+.main input:focus {
+  box-shadow: 0 0 15px var(--primary-color);
+  transform: scale(1.03);
+}
+
+.signup button,
+.main button,
+.logout-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #ff6b6b, #ff8787);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.signup button:hover,
+.main button:hover,
+.logout-btn:hover {
+  background: linear-gradient(90deg, #ff8787, #ff6b6b);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px var(--hover-glow);
+}
+
+
+.signup p,
+.main p {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #aaa;
+}
+
+.signup span,
+.main span {
+  color: var(--primary-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signup span:hover,
+.main span:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Home Page */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.home-title {
+  font-size: 46px;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 8px var(--hover-glow);
+}
+
+/* User Card */
+.user-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 35px var(--shadow-color);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.user-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 55px var(--hover-glow);
+}
+
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid var(--primary-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px var(--hover-glow);
+}
+
+
+.logout-btn {
+  margin-top: 25px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
